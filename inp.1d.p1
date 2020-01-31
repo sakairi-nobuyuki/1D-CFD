@@ -1,0 +1,13 @@
+100		//  maximum stencil size (n)
+10.0		//  length of calculation stencil (m)
+870.0		//  initial density (kg/m3)
+0.0		//  initial velosity (m/s)
+0.1e+06	//  initial pressure (Pa)
+7.415		//  specific ratio of heat (-)
+296.3e+06   	// B (Pa)
+0.1		//  Courant Number (-)
+1.0e-02		//  Epsilon
+100		//  output frequency (spatial)
+100		//  output frequency (temporal)
+0.0108e-03	//  viscosity (Pa s)
+56.0		//  pipe diameter (mm)
