@@ -1,8 +1,0 @@
-56.0		//  diameter (mm)
-100.0		//  height (mm)
-870.0		//  density (kg / m3)
-0.1e+06    	//  pressure (Pa)
-7.415		//  ratio of specific heat 
-296.0e+06	//  B (Pa)
-2		//  geometry type (1: sphere, 2: cylinder, 3: chokuhoutai)
-100		//  output frequency
