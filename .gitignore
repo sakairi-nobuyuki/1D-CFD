@@ -4,3 +4,5 @@ out*
 *.o
 Make*
 inp*
+.gitignore
+main
