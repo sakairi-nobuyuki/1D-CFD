@@ -20,5 +20,57 @@ Even though the flow velosity exceeds sound speed, this program contines stable 
 Additionaly, to make the simulation to simulate complete system, some accesories as actuators, valve, booster, or, pumps might be neccesary.
 I would add these components time to time in the near future.
 
-- Solver: Compressible fluid mechanics solver with Total Volume Diminishing (3-rd order up-wind derivertive).
+- Solver: Compressible fluid mechanics solver with Total Volume Diminishing (hereafter calles as "TVD") on 3-rd order up-wind derivertive.
 - Fluid type: Users can input fluid properties, as density, compressibility or other items to simulate liquid or air.
+
+## Specifications
+
+- Solvers
+  - 1D-CFD solver
+    - Third-order up-wind derivertive flux difference separation type finite volume method with TVD.
+    - Tait equation is applied as the constitutive equation of fluid.
+    - Appropriate time step control was applied for numerical stability.
+  - 0D-CFD solver
+    - Simple Euler type forward differential due to its nonliniality.
+    - Some special limiter functions for stalbe interconnection between 1D to 0D CFD.
+- Development Environment
+  - CPU: Intel Core i5
+  - RAM: 8GB
+  - HDD: 16GB
+  - OS:  Mac OS X High Sierra
+  - Compiler: g++ 4.2.1
+	
+
+
+## Installation and quick guidance
+Users need to compile programs with g++ or other compilers. Intel compiler also hopefully works well however was not confirmed.
+
+### Mac OS/Linux
+Once installing g++ to your computer, clone the programs to any directory you want to calculate, as
+
+     $ git clone https://github.com/sakairi-nobuyuki/1D-CFD.git
+
+and, edit `main.cpp` file as what you want to calculrate.
+
+Detail instruction for editing `main.cpp` can be found on Usage section.
+
+After preparing `main.cpp` file, type,
+
+     $ make
+
+will yields, executable `main` file.
+
+Prepare inputfile as `inp.1d.001` by refering the guidance of Usage section of this README, type,
+
+	$ ./main
+
+Then the calculation will start and calculated files are automatically generated in the current directory with ascii type data.
+The data structure is described in the Usage section.
+
+### Windows users
+Unfortunately this program is not confirmed its function in windows, and also, windows users cannot use `Makefile`
+ to compile the program. Windows users should prepare their own compile command such as,
+
+    > g++ -O3 functions.cpp boundary.cpp volume.cpp CFD1D.cpp main.cpp -o main.exe -lm
+
+O3 optimization is recommended.
